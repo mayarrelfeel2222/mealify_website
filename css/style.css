@@ -1,0 +1,648 @@
+/*Shared*/
+.headers{
+    text-align: center;
+    width: 100%;
+    margin: 5% 0;
+}
+
+.headers span{
+    color:#7F7F90;
+    font-weight: 400;
+    font-size: 0.7rem;
+}
+
+.headers h2{
+    margin: 1% 0;
+    font-family: 'Amatic SC', sans-serif;
+    color: #212529;
+    font-size: 3rem;
+}
+
+.headers h2 span{
+    margin: 1% 0;
+    font-family: 'Amatic SC', sans-serif;
+    color:red;
+    font-size: 3rem;
+}
+
+*{
+    scroll-behavior: smooth;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    
+}
+
+/*NAVBAR*/
+nav{
+    position: fixed;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;  
+    z-index: 20;  
+}
+
+nav .logo h2{
+    color: black;
+    position: relative;
+}
+nav .logo h2::after{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 70%;
+    background-color: red;
+    border-radius: 100%;
+} 
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+nav ul li{
+     padding: 15px;
+}
+
+nav ul li a{
+    position: relative;
+    color: gray;
+}
+
+nav ul li a::before{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left:0;
+    width: 0;
+    height: 2px;
+    background-color:#CE1212;
+    transition: width 1s;
+}
+
+nav ul li:hover a{
+    color: #000;
+}
+
+nav ul li:hover a::before{
+    width: 100%;
+}
+
+body:has(#Home:target) li a[href="#Home"]::before{
+    width: 100%;
+}
+body:has(#Home:target) li a[href="#Home"]{
+    color: #000;
+}
+
+body:has(#Chefs:target) li a[href="#Chefs"]::before{
+    width: 100%;
+}
+body:has(#Chefs:target) li a[href="#Chefs"]{
+    color: #000;
+}
+
+body:has(#Gallery:target) li a[href="#Gallery"]::before{
+    width: 100%;
+}
+body:has(#Gallery:target) li a[href="#Gallery"]{
+    color: #000;
+}
+
+body:has(#Contact:target) li a[href="#Contact"]::before{
+    width: 100%;
+}
+body:has(#Contact:target) li a[href="#Contact"]{
+    color: #000;
+}
+
+
+nav .mood{
+    width: 20%;
+}
+nav .mood a h3{
+    display: flex;
+    justify-content: space-around;
+}
+nav .mood a h3 i{
+    font-size: 30px;
+    color: black;
+    
+}
+
+
+/*HOME*/
+
+#Home{
+    width: 100%;
+    padding: 0;
+}
+
+#Home .Home{
+    background-color: #EEEEEE;
+    width: 100%;
+    padding: 5% 0 0 0;
+}
+
+#Home .Home .dish{
+    display: flex;
+    padding: 5% 0;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+#Home .Home .welcome{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 5% 0;
+    justify-content: center;
+}
+
+#Home .Home .dish img{
+    width: 70%;
+}
+#Home .Home .dish img:hover{
+    animation-name: sora;
+    animation-duration: 0.3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes sora{
+    0%{
+        transform: translate(3px, 3px) rotate(1deg);
+    }
+    25%{
+        transform: translate(3px, -3px) rotate(-1deg);
+    }
+    50%{
+        transform: translate(-3px, -3px) rotate(1deg);
+    }
+    100%{
+        transform: translate(-3px, 3px) rotate(-1deg);
+    }
+
+}
+
+
+#Home .Home .welcome h1{
+    font-size: 4rem;
+    font-family: 'Amatic SC', sans-serif;
+    margin: 2% 0;
+}
+
+#Home .Home .welcome p{
+    font-family: system-ui;
+    color: #4F4F5A;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+#Home .Home .welcome .Home-Buttons{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+#Home .Home .welcome .Home-Buttons .Book-Table{
+    padding: 2% 5%;
+    background-color: darkred;
+    color: white;
+    border-radius: 0px 20px 20px 20px;
+}
+
+#Home .Home .welcome .Home-Buttons .Vedio-link{
+    padding: 2% 5%;
+    color: black;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+}
+#Home .Home .welcome .Home-Buttons .Vedio-link:hover{
+ color: darkred;
+}
+
+    
+#Home .Home .welcome .Home-Buttons .Vedio-link div{
+    width: 3.3rem;
+    height: 3.3rem;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, rgb(206,18,18) 0 50%, transparent 50% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin-right: 0.3125rem;
+    position: relative;
+
+}
+#Home .Home .welcome .Home-Buttons .Vedio-link div::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: inherit;
+    
+}
+
+#Home .Home .welcome .Home-Buttons .Vedio-link div i{
+    z-index: 2;
+}
+
+
+#Home .Home .welcome .Home-Buttons .Book-Table:hover{
+    background-color: red;
+}
+
+/* CHEFS*/
+#Chefs .container{
+    flex-direction: column;
+}
+
+#Chefs .chef_images{
+    display: flex;
+}
+
+#Chefs .chef_images .chef_{
+    width: calc(100%/3 - 30px);
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px #dadada;
+    transition: all ease-in-out 0.5s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #7F7F90;
+    border-radius: 10px;
+}
+
+#Chefs .chef_images .chef_:hover{
+    transform: scale(1.07);
+}
+
+
+#Chefs .chef_images .chef_ .Main_img{
+    width: 100%;
+}
+
+#Chefs .chef_images .chef_ div{
+    position: relative;
+}
+
+#Chefs .chef_images .chef_ .Wave_img{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
+#Chefs .chef_images .chef_ h3{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+#Chefs .chef_images .chef_ h5 , #Chefs .chef_images .chef_ h3{
+    margin: 1% 0;
+}
+
+#Chefs .chef_images .chef_ .Chef_Icons{
+    display: flex;
+    position: absolute;
+    top: 5%;
+    right: -10%;
+    flex-direction: column;
+    padding: 2%;
+    background-color: rgb(255 255 255 / 50%);
+    border-radius: 5px;
+    height: 20%;
+    justify-content: space-evenly;
+    transition: all ease-in-out 0.5s;
+}
+
+#Chefs .chef_images .chef_:hover .Chef_Icons{
+    right: 2%;
+}
+
+/*Gallery*/
+#Gallery{
+    margin-top: 5%;
+    padding: 2% 0;
+    background-color: #EEEEEE;
+}
+
+#Gallery .container{
+    flex-direction: column;
+}
+
+#Gallery .menu{
+    height: 72.8125rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+#Gallery .menu .item{
+    width: calc(100%/3 - 30px);
+    position: relative;
+    overflow: hidden;
+    height: auto;
+}
+
+#Gallery .menu .item img{
+    width: 100%;
+    transition: all ease-in-out 0.5s;
+}
+
+#Gallery .menu .item:hover img{
+    transform: scale(1.07);
+}
+#Gallery .menu .item .caption{
+    position: absolute;
+    top: 100%;
+    background-color: #00000096;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    transition: all ease-in-out 1s;
+}
+
+#Gallery .menu .item:hover .caption{
+    top: 0;
+}
+
+#Gallery .menu .item .caption h5, #Gallery .menu .item .caption p{
+    margin: 0;
+}
+
+/*Contact*/
+#Contact{
+    padding: 2% 0;
+}
+
+#Contact .container{
+    flex-direction: column;
+    width: 70%;
+}
+
+#Contact iframe{
+    height: 20rem;
+}
+
+#Contact .Iframe_info{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+
+#Contact .Iframe_info .info{
+    margin: 1% 0;
+    background-color: #F5F5F5;
+    display: flex;
+    width: 49%;
+    align-items: center;
+}
+
+#Contact .Iframe_info .info .info_icon{
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #CE1212;
+    border-radius: 100%;
+    color: white;
+    margin: 3%;
+}
+
+#Contact .Iframe_info .info .info_text h3,#Contact .Iframe_info .info .info_text p{
+    margin: 1% 0;
+}
+
+#Contact .Iframe_info .info .info_text h3{
+    color: #7D7D7D;
+}
+
+#Contact .Iframe_info .info .info_text p{
+    color: #212529;
+    font-size: 0.9rem;
+}
+
+#Contact .Iframe_info .info .info_text p span{
+    color: black;
+    font-weight: 700;
+}
+
+#Contact form {
+    box-shadow: 0px 0px 10px 0px #cccccc;
+    padding: 2%;
+    box-sizing: border-box;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2%;
+}
+
+#Contact form input,
+#Contact form textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: box-shadow 0.2s;
+    height: 40px;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+}
+
+#Contact form #Special_input{
+    width: 49%;
+}
+
+#Contact form input::placeholder,
+#Contact form textarea::placeholder {
+    color: #999999;
+}
+
+#Contact form input:focus-visible,
+#Contact form textarea:focus-visible {
+    border-color: #FF305B;
+    outline: #FF305B;
+}
+
+#Contact form textarea {
+    height: 100px;
+}
+
+#Contact form input:hover {
+    box-shadow: 0px 2px 70px 6px rgba(91, 46, 46, 0);
+}
+
+#Contact form button {
+    border: none;
+    padding: 7px;
+    background-color: #CE1212;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 0.8rem;
+}
+
+/*footer*/
+footer{
+    margin-top: 5%;
+    width: 100%;
+    background: url(../img/textured-metal-background.jpg);
+}
+
+footer p,footer h3{
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 2% 0;
+}
+
+footer p{
+    font-size: 0.8rem;
+}
+
+footer h3{
+    font-size: 1rem;
+}
+
+footer .container{
+    padding: 2%;
+    width: 70%;
+    box-sizing: border-box;
+    gap: 1%;
+}
+
+footer .footer_social{
+    width: calc((100% * (3/11)) - 2%);
+}
+
+footer .footer_social .footer_logo{
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+footer .footer_social .footer_logo h2{
+    color: white;
+    position: relative;
+}
+
+footer .footer_social .footer_logo h2::after{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 70%;
+    background-color: red;
+    border-radius: 100%;
+} 
+
+footer .footer_social .footer_logo img{
+    width: 10%;
+}
+
+footer .footer_social h3{
+    text-align: center;
+}
+
+footer .footer_social .footer_icons{
+    display: flex;
+    color: white;
+    margin: 5% 0;
+    justify-content: space-around;
+    font-size: 1.2rem;
+}
+
+footer .footer_subscribe{
+    width: calc((100% * (5/11)) - 2%);
+}
+
+footer .footer_subscribe .footer_form{
+    gap: 2%;
+}
+
+footer .footer_subscribe .footer_form input{
+    width: 69%;
+    height: 30px;
+}
+
+footer .footer_subscribe .footer_form button{
+    width: 29%;
+    height: 30px;
+    background-color: #E61414;
+    color: white;
+}
+
+footer .footer_subscribe .footer_links{
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 6%;
+    flex-wrap: wrap;;
+}
+
+footer .footer_subscribe .footer_links li{
+    height: 20px;
+    width: 47%;
+    color: white;
+    padding: 0 0 0 2%;
+    box-sizing: border-box;
+    transition: all ease-in-out 0.5s;
+}
+
+footer .footer_subscribe .footer_links li:hover{
+    background-color: #222;
+    transform: translateX(10px);
+}
+
+footer .footer_subscribe .footer_links li span{
+    font-weight: bold;
+    margin-right: 2%;
+}
+
+footer .footer_info{
+    width: calc((100% * (3/11)) - 2%);
+}
+
+footer .footer_info .footer_info_box{
+    display: flex;
+    padding: 2%;
+    gap: 5%;
+    align-items: center;
+}
+
+footer .footer_info .footer_info_box i{
+    font-size: 15px;
+    color: #BB0A09;
+    text-align: center;
+    width: 15px;
+}
